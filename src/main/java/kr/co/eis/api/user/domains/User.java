@@ -2,6 +2,9 @@ package kr.co.eis.api.user.domains;
 
 import com.sun.istack.NotNull;
 import kr.co.eis.api.board.domains.Article;
+import kr.co.eis.api.image.domains.Image;
+import kr.co.eis.api.text.domains.Text;
+import kr.co.eis.api.voice.domains.Voice;
 import lombok.*;
 import org.springframework.data.repository.cdi.Eager;
 
@@ -44,5 +47,14 @@ public class User {
     List<Article> ls = new ArrayList<>();
     @ElementCollection(fetch = FetchType.EAGER)
     public List<Role> roles;
+
+    @OneToMany(mappedBy = "users")
+    List<Text> texts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "users")
+    List<Voice> voices = new ArrayList<>();
+
+    @OneToMany(mappedBy = "users")
+    List<Image> images = new ArrayList<>();
 
 }

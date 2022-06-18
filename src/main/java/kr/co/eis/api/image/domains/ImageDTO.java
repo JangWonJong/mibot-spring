@@ -18,5 +18,6 @@ import org.springframework.stereotype.Component;
 @Component @Data
 public class ImageDTO {
     @ApiModelProperty(position = 1) private long imageId;
+    @ApiModelProperty(position = 2) private long userId;
 
 }

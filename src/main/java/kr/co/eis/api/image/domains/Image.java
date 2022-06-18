@@ -1,5 +1,7 @@
 package kr.co.eis.api.image.domains;
 
+import io.swagger.annotations.ApiModelProperty;
+import kr.co.eis.api.user.domains.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -31,5 +33,9 @@ public class Image {
     @Id
     @Column(name = "image_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY) private long imageId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User users;
 
 }
