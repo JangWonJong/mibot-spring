@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * packageName: kr.co.eis.api.common.datastructure
@@ -71,18 +68,28 @@ public class MemberCRUD {
                 case "4":
                     String res = "";
                     Member temp2 = new Member();
-                    temp2.setUserid("you");
-                    res = (service.findById(temp2.userid)==null) ? "찾는 값이 없습니다" : String.format("찾는 값은 %s입니다", temp2);
+                    //System.out.println(service.findById(scanner.next()));
+                    //temp2.setUserid("you");
+                    res = (service.findById(scanner.next())==null) ? "찾는 값이 없습니다" : String.format("찾는 값은 %s입니다", temp2);
+                    //res2 = (service.findById(scanner.next())==null) ? "찾는 값이 없습니다" : "찾으시는 값은: "+service.findById(scanner.next());
                     System.out.println(res);
+                    // res 리턴 왜 null???
                     break;
-                case "5":break;
+                case "5":
+                    System.out.println("이름검색");
+                    System.out.println("찾는 아이디 정보: " + service.findByName(scanner.next()));
+                    break;
                 case "6":
                     System.out.println("총 회원 목록: " + service.findAll());
                     break;
                 case "7":
                     System.out.println("총 회원 수: "+ service.count());
                     break;
-                case "8":break;
+                case "8":
+                    System.out.println("사용가능 ID 검색");
+                    System.out.println(service.existsById(scanner.next()) ? "Already used": "can use this ID");
+
+                    break;
                 case "9":
                     service.clear();
                     break;
@@ -124,7 +131,7 @@ public class MemberCRUD {
         void update(Member member);
         void delete(Member member);
         Member findById(String id);
-        List<Member> findByName(String name);
+        Member findByName(String name);
         List<Member> findAll();
         int count();
         boolean existsById(String id);
@@ -158,13 +165,13 @@ public class MemberCRUD {
         }
 
         @Override
-        public List<Member> findByName(String name) {
-            return (List<Member>) map.get(name);
+        public Member findByName(String name) {
+            return map.get(name);
         }
 
         @Override
         public List<Member> findAll() {
-            return (List<Member>) map.values();
+            return new ArrayList<>(map.values());
         }
 
         @Override
