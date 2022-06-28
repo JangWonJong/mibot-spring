@@ -40,21 +40,21 @@ public class User {
     @Column private @NotNull String address;
     @Column private @NotNull String birth;
     @Column private @NotNull String tel;
-    @Column(name = "reg_date")
-    @NotNull private String regDate;
+    @Column private @NotNull String token;
 
     @OneToMany(mappedBy = "user")
     List<Article> ls = new ArrayList<>();
-    @ElementCollection(fetch = FetchType.EAGER)
-    public List<Role> roles;
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user")
     List<Text> texts = new ArrayList<>();
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user")
     List<Voice> voices = new ArrayList<>();
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user")
     List<Image> images = new ArrayList<>();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    public List<Role> roles;
 
 }

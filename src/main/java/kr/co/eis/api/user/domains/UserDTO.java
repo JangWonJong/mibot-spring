@@ -28,7 +28,6 @@ public class UserDTO {
     @ApiModelProperty(position = 6) String address;
     @ApiModelProperty(position = 7) String birth;
     @ApiModelProperty(position = 8) String tel;
-    @ApiModelProperty(position = 9) private String regDate;
     @ApiModelProperty(position = 10) private String token;
     @ApiModelProperty(position = 11) private List<Role> roles;
 

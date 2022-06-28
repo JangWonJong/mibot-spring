@@ -66,13 +66,14 @@ public class MemberCRUD {
                     System.out.println("삭제된 값은"+temp1);
                     break;
                 case "4":
-                    String res = "";
-                    Member temp2 = new Member();
+                    String res2 = "";
+                    //Member temp2 = new Member();
                     //System.out.println(service.findById(scanner.next()));
                     //temp2.setUserid("you");
-                    res = (service.findById(scanner.next())==null) ? "찾는 값이 없습니다" : String.format("찾는 값은 %s입니다", temp2);
-                    //res2 = (service.findById(scanner.next())==null) ? "찾는 값이 없습니다" : "찾으시는 값은: "+service.findById(scanner.next());
-                    System.out.println(res);
+                    //res = (service.findById(scanner.next())==null) ? "찾는 값이 없습니다" : String.format("찾는 값은 %s입니다", temp2);
+                    res2 = (service.findById(scanner.next())==null) ? "찾는 값이 없습니다" : "찾으시는 값은: "+service.findById(scanner.next());
+                    System.out.println(res2);
+                    //System.out.println(res);
                     // res 리턴 왜 null???
                     break;
                 case "5":
@@ -168,6 +169,11 @@ public class MemberCRUD {
         public Member findByName(String name) {
             return map.get(name);
         }
+
+        // 동일인물 일 수 있으니까 list로
+        /*public List<Member> findByName(String name) {
+            return (List<Member>) map.get(name);*/
+
 
         @Override
         public List<Member> findAll() {

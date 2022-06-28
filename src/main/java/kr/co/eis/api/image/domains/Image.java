@@ -36,6 +36,6 @@ public class Image {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User users;
+    private User user;
 
 }

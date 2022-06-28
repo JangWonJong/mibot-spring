@@ -101,7 +101,6 @@ public class UserServiceImpl implements UserService {
             repository.save(User.builder()
                     .username(user.getUsername())
                     .name(user.getName())
-                    .regDate(user.getRegDate())
                     .email(user.getEmail())
                     .password(encoder.encode(user.getPassword()))
                     .roles(list).build());
