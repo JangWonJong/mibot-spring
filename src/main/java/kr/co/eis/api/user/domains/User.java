@@ -40,7 +40,7 @@ public class User {
     @Column private @NotNull String address;
     @Column private @NotNull String birth;
     @Column private @NotNull String tel;
-    @Column private @NotNull String token;
+    @Column private String token;
 
     @OneToMany(mappedBy = "user")
     List<Article> ls = new ArrayList<>();

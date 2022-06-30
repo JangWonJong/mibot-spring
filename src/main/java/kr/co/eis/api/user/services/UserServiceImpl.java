@@ -102,7 +102,11 @@ public class UserServiceImpl implements UserService {
                     .username(user.getUsername())
                     .name(user.getName())
                     .email(user.getEmail())
+                    .address(user.getAddress())
                     .password(encoder.encode(user.getPassword()))
+                    .birth(user.getBirth())
+                    .tel(user.getTel())
+                    .token(user.getToken())
                     .roles(list).build());
             result = "SUCCESS";
         }else {
