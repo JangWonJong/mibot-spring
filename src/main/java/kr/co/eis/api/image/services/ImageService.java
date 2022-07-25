@@ -1,5 +1,11 @@
 package kr.co.eis.api.image.services;
 
+import kr.co.eis.api.auth.domains.Messenger;
+import kr.co.eis.api.image.domains.Image;
+import kr.co.eis.api.image.domains.ImageDTO;
+
+import java.util.List;
+
 /**
  * packageName: kr.co.mibot.api.image.services
  * fileName   : ImageService
@@ -12,4 +18,6 @@ package kr.co.eis.api.image.services;
  * 2022-06-18     Jangwonjong       최초 생성
  */
 public interface ImageService {
+
+    List<Image> saveImageList(List<Image> imageList);
 }

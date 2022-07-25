@@ -4,6 +4,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * packageName: kr.co.mibot.api.image
  * fileName   : ImageDTO
@@ -18,6 +20,10 @@ import org.springframework.stereotype.Component;
 @Component @Data
 public class ImageDTO {
     @ApiModelProperty(position = 1) private long imageId;
-    @ApiModelProperty(position = 2) private long userId;
+    @ApiModelProperty(position = 2) String imageName;
+    @ApiModelProperty(position = 3) String image;
+    @ApiModelProperty(position = 4) Long size;
+
+
 
 }

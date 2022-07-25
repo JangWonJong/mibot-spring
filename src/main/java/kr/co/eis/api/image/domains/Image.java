@@ -32,7 +32,11 @@ import javax.persistence.*;
 public class Image {
     @Id
     @Column(name = "image_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY) private long imageId;
+    @GeneratedValue(strategy = GenerationType.AUTO) private long imageId;
+    @Column private String imageName;
+    @Column private String image;
+    @Column private long size;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id")

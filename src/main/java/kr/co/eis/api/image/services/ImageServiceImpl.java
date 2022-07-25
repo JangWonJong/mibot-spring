@@ -1,8 +1,13 @@
 package kr.co.eis.api.image.services;
 
+import kr.co.eis.api.auth.domains.Messenger;
+import kr.co.eis.api.image.domains.Image;
+import kr.co.eis.api.image.domains.ImageDTO;
 import kr.co.eis.api.image.repositories.ImageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * packageName: kr.co.mibot.api.image.services
@@ -19,4 +24,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ImageServiceImpl implements ImageService{
     private final ImageRepository repository;
+
+
+    @Override
+    public List<Image> saveImageList(List<Image> imageList) {
+        return repository.saveAll(imageList);
+    }
 }

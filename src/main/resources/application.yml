@@ -1,9 +1,11 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/mibotdb?characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: root
+    url: #jdbc:mariadb://mibot.cpk5wmyll2nc.ap-northeast-2.rds.amazonaws.com/mibot?characterEncoding=UTF-8&serverTimezone=UTC
+        jdbc:mariadb://localhost:3306/mibotdb?characterEncoding=UTF-8&serverTimezone=UTC
+
+    username: root #mibot
+    password: root #mibot803
 
   jpa:
     hibernate:
