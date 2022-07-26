@@ -13,9 +13,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * packageName: kr.co.mibot.api.image.controllers
@@ -29,16 +30,16 @@ import java.util.List;
  * 2022-06-18     Jangwonjong       최초 생성
  */
 @RestController
-@Api(tags = "image")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@Api(tags = "images")
 @RequiredArgsConstructor
 @RequestMapping("/images")
 public class ImageController {
     private final ImageService service;
     private final ImageProperties imageProperties;
 
-    @PostMapping("/image")
-
-    public ResponseEntity<?> uploadImages(@RequestPart List<MultipartFile> files) throws IOException {
+    @PostMapping(value = "/image")
+    public ResponseEntity<?> uploadImages(@RequestPart(value = "file", required = false) List<MultipartFile> files) throws IOException {
         final String location = imageProperties.getLocation();
         final List<Image> imageList = new ArrayList<>();
         for (MultipartFile file : files) {

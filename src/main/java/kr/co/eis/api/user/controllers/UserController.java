@@ -28,7 +28,7 @@ import java.util.Optional;
  * 2022-05-03     Jangwonjong       최초 생성
  */
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@Api(tags = "user")
+@Api(tags = "users")
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
