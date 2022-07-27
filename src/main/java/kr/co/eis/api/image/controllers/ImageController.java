@@ -37,7 +37,7 @@ public class ImageController {
     private final ImageProperties imageProperties;
 
     @PostMapping(value = "/image")
-    public ResponseEntity<?> uploadImages(@RequestBody List<MultipartFile> files) throws IOException {
+    public ResponseEntity<?> uploadImages(@RequestPart(value = "file", required = false) List<MultipartFile> files) throws IOException {
         final String location = imageProperties.getLocation();
         final List<Image> imageList = new ArrayList<>();
         for (MultipartFile file : files) {
