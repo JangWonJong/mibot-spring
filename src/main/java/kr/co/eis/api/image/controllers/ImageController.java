@@ -44,7 +44,7 @@ public class ImageController {
         final List<Image> imageList = new ArrayList<>();
         for (MultipartFile file : files) {
             String imageName = file.getOriginalFilename();
-            String imageUrl = imageProperties.getLocation() + imageName;
+            String imageUrl = location + imageName;
             Long imageSize = file.getSize();
 
             imageList.add(Image.builder()
