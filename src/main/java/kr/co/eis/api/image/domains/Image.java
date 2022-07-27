@@ -34,7 +34,7 @@ public class Image {
     @Column(name = "image_id")
     @GeneratedValue(strategy = GenerationType.AUTO) private long imageId;
     @Column private String imageName;
-    @Column private String image;
+    @Column private String imagePath;
     @Column private long size;
 
 

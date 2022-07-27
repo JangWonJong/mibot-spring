@@ -1,9 +1,7 @@
 package kr.co.eis.api.image.controllers;
 
 import io.swagger.annotations.*;
-import kr.co.eis.api.auth.domains.Messenger;
 import kr.co.eis.api.image.domains.Image;
-import kr.co.eis.api.image.domains.ImageDTO;
 import kr.co.eis.api.image.properties.ImageProperties;
 import kr.co.eis.api.image.services.ImageService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 
-
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -39,17 +37,19 @@ public class ImageController {
     private final ImageProperties imageProperties;
 
     @PostMapping(value = "/image")
-    public ResponseEntity<?> uploadImages(@RequestPart(value = "file", required = false) List<MultipartFile> files) throws IOException {
+    public ResponseEntity<?> uploadImages(@RequestBody List<MultipartFile> files) throws IOException {
         final String location = imageProperties.getLocation();
         final List<Image> imageList = new ArrayList<>();
         for (MultipartFile file : files) {
             String imageName = file.getOriginalFilename();
             String imageUrl = location + imageName;
             Long imageSize = file.getSize();
-
+            //로컬저장
+            file.transferTo(new File(imageUrl));
+            //DB에 저장
             imageList.add(Image.builder()
                     .imageName(imageName)
-                    .image(imageUrl)
+                    .imagePath(imageUrl)
                     .size(imageSize)
                     .build());
         }

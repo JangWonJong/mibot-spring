@@ -21,7 +21,7 @@ import java.util.List;
 public class ImageDTO {
     @ApiModelProperty(position = 1) private long imageId;
     @ApiModelProperty(position = 2) String imageName;
-    @ApiModelProperty(position = 3) String image;
+    @ApiModelProperty(position = 3) String imagePath;
     @ApiModelProperty(position = 4) Long size;
 
 

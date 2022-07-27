@@ -9,7 +9,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true #To beautify or pretty print the SQL
@@ -17,7 +17,7 @@ spring:
   servlet:
     multipart:
       enabled: true
-      location: C:\Users\bitcamp\Desktop\image
+      location: C:\Users\bitcamp\Desktop\image\
       max-file-size: 20MB
       max-request-size: 20MB
       file-size-threshold: 1MB
