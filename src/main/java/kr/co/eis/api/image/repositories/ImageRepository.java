@@ -4,9 +4,6 @@ import kr.co.eis.api.image.domains.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
-
 /**
  * packageName: kr.co.mibot.api.text.repositories
  * fileName   : VoiceRepository

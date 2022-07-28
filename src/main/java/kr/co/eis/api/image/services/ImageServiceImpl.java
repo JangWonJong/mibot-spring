@@ -1,8 +1,6 @@
 package kr.co.eis.api.image.services;
 
-import kr.co.eis.api.auth.domains.Messenger;
 import kr.co.eis.api.image.domains.Image;
-import kr.co.eis.api.image.domains.ImageDTO;
 import kr.co.eis.api.image.repositories.ImageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,4 +28,5 @@ public class ImageServiceImpl implements ImageService{
     public List<Image> saveImageList(List<Image> imageList) {
         return repository.saveAll(imageList);
     }
+
 }

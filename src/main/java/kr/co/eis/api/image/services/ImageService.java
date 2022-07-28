@@ -1,8 +1,6 @@
 package kr.co.eis.api.image.services;
 
-import kr.co.eis.api.auth.domains.Messenger;
 import kr.co.eis.api.image.domains.Image;
-import kr.co.eis.api.image.domains.ImageDTO;
 
 import java.util.List;
 
@@ -20,4 +18,5 @@ import java.util.List;
 public interface ImageService {
 
     List<Image> saveImageList(List<Image> imageList);
+
 }

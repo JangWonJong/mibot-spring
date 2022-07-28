@@ -36,20 +36,24 @@ public class ImageController {
     private final ImageService service;
     private final ImageProperties imageProperties;
 
-    @PostMapping(value = "/image")
-    public ResponseEntity<?> uploadImages(@RequestPart(value = "file", required = false) List<MultipartFile> files) throws IOException {
+
+    //@RequestBody는 Postman으로 들어옴
+    //@ReqeustPart는 안됨 -> why?
+    @PostMapping(value = "/upload")
+    public ResponseEntity<?> uploadImages(@RequestPart(value = "files", required = false) List<MultipartFile> files) throws IOException {
         final String location = imageProperties.getLocation();
         final List<Image> imageList = new ArrayList<>();
         for (MultipartFile file : files) {
             String imageName = file.getOriginalFilename();
             String imageUrl = location + imageName;
+            String type = file.getContentType();
             Long imageSize = file.getSize();
             //로컬저장
             file.transferTo(new File(imageUrl));
             //DB에 저장
             imageList.add(Image.builder()
-                    .imageName(imageName)
-                    .imagePath(imageUrl)
+                    .name(imageName)
+                    .type(type)
                     .size(imageSize)
                     .build());
         }
