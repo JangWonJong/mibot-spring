@@ -39,6 +39,8 @@ dependencies {
 	testImplementation group: 'org.springframework.security', name: 'spring-security-test', version: '5.7.1'
 	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
 	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+	implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
 
 
 
