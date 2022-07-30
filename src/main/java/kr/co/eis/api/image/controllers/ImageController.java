@@ -39,18 +39,18 @@ public class ImageController {
     //@RequestBody는 Postman으로 들어옴
     //@ReqeustPart는 안됨 -> why?
     @PostMapping(value = "/upload")
-    public ResponseEntity<?> uploadImages(@RequestPart(required = false) MultipartFile file) throws IOException {
+    public ResponseEntity<?> uploadImages(@RequestParam MultipartFile file) throws IOException {
         System.out.println("들어옴");
         if(file == null){
             System.out.println("files is null");
         }else System.out.println("files is not null");
         final String location = imageProperties.getLocation();
         final List<Image> imageList = new ArrayList<>();
-        /**
         String imageName = file.getOriginalFilename();
         String imageUrl = location + imageName;
         String type = file.getContentType();
         Long imageSize = file.getSize();
+
         //로컬저장
         file.transferTo(new File(imageUrl));
         //DB에 저장
@@ -59,7 +59,7 @@ public class ImageController {
                 .type(type)
                 .size(imageSize)
                 .build());
-         */
+
         service.saveImageList(imageList);
         return ResponseEntity.ok(HttpStatus.CREATED);
     }

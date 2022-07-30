@@ -33,12 +33,15 @@ public class Image {
     @Id
     @Column(name = "image_id")
     @GeneratedValue(strategy = GenerationType.AUTO) private long imageId;
-    @Column private String name;
-    @Column private long lastModified;
-    @Column private long lastModifiedDate;
-    @Column private String type;
-    @Column private String webkitRelativePath;
-    @Column private long size;
+
+    private String originFilename;
+    private String storeFilename;
+//    @Column private String name;
+//    @Column private long lastModified;
+//    @Column private long lastModifiedDate;
+//    @Column private String type;
+//    @Column private String webkitRelativePath;
+//    @Column private long size;
 
 
     @ManyToOne
