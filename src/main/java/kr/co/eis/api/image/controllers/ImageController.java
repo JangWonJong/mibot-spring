@@ -1,9 +1,11 @@
 package kr.co.eis.api.image.controllers;
 
 import io.swagger.annotations.*;
+import kr.co.eis.api.auth.domains.Messenger;
 import kr.co.eis.api.image.domains.Image;
 import kr.co.eis.api.image.properties.ImageProperties;
 import kr.co.eis.api.image.services.ImageService;
+import kr.co.eis.api.user.domains.User;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
@@ -61,5 +63,13 @@ public class ImageController {
 
         service.saveImageList(imageList);
         return ResponseEntity.ok(HttpStatus.CREATED);
+    }
+    @GetMapping("/findById/{imageid}")
+    public ResponseEntity<Optional<Image>> findById(@PathVariable String imageid) {
+        return ResponseEntity.ok(service.findById(imageid));
+    }
+    @GetMapping("/getOne/{imageid}")
+    public ResponseEntity<List<Image>> getOne(@PathVariable Long imageid) {
+        return ResponseEntity.ok(service.getOne(imageid));
     }
 }

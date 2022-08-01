@@ -1,11 +1,13 @@
 package kr.co.eis.api.image.services;
 
+import kr.co.eis.api.auth.domains.Messenger;
 import kr.co.eis.api.image.domains.Image;
 import kr.co.eis.api.image.repositories.ImageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * packageName: kr.co.mibot.api.image.services
@@ -27,6 +29,16 @@ public class ImageServiceImpl implements ImageService{
     @Override
     public List<Image> saveImageList(List<Image> imageList) {
         return repository.saveAll(imageList);
+    }
+
+    @Override
+    public Optional<Image> findById(String imageid) {
+        return repository.findById(0L);
+    }
+
+    @Override
+    public List<Image> getOne(Long imageid) {
+        return null;
     }
 
 }

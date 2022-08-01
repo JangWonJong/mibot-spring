@@ -1,8 +1,10 @@
 package kr.co.eis.api.image.services;
 
+import kr.co.eis.api.auth.domains.Messenger;
 import kr.co.eis.api.image.domains.Image;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * packageName: kr.co.mibot.api.image.services
@@ -18,5 +20,7 @@ import java.util.List;
 public interface ImageService {
 
     List<Image> saveImageList(List<Image> imageList);
+    Optional<Image> findById(String imageid);
+    List<Image> getOne(Long imageid);
 
 }
