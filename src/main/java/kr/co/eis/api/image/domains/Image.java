@@ -34,9 +34,8 @@ public class Image {
     @Column(name = "image_id")
     @GeneratedValue(strategy = GenerationType.AUTO) private long imageId;
 
-    private String originFilename;
-    private String storeFilename;
-//    @Column private String name;
+    @Column private String name;
+    @Column private String type;
 //    @Column private long lastModified;
 //    @Column private long lastModifiedDate;
 //    @Column private String type;

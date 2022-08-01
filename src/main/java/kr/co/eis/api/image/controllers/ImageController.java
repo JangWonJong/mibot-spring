@@ -49,7 +49,7 @@ public class ImageController {
         String imageName = file.getOriginalFilename();
         String imageUrl = location + imageName;
         String type = file.getContentType();
-        Long imageSize = file.getSize();
+        //Long imageSize = file.getSize(); 이미지 사이즈
 
         //로컬저장
         file.transferTo(new File(imageUrl));
@@ -57,7 +57,6 @@ public class ImageController {
         imageList.add(Image.builder()
                 .name(imageName)
                 .type(type)
-                .size(imageSize)
                 .build());
 
         service.saveImageList(imageList);
