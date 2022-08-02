@@ -41,7 +41,7 @@ public class ImageController {
     //@RequestBody는 Postman으로 들어옴
     //@ReqeustPart는 안됨 -> why?
     @PostMapping(value = "/upload")
-    public ResponseEntity<?> uploadImages(@RequestParam MultipartFile file) throws IOException {
+    public ResponseEntity<?> uploadImages(@RequestPart(value = "file", required = false) MultipartFile file) throws IOException {
         System.out.println("들어옴");
         if(file == null){
             System.out.println("files is null");

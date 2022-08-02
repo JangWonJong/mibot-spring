@@ -17,7 +17,7 @@ spring:
   servlet:
     multipart:
       enabled: true
-      location: C:\Users\bitcamp\Desktop\saveim\
+      location: C:\Users\bitcamp\EI\mibot-front\public\image_save\
       max-file-size: 20MB
       max-request-size: 20MB
       file-size-threshold: 1MB
