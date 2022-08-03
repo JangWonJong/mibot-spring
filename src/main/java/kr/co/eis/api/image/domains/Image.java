@@ -36,12 +36,6 @@ public class Image {
 
     @Column private String name;
     @Column private String type;
-//    @Column private long lastModified;
-//    @Column private long lastModifiedDate;
-//    @Column private String type;
-//    @Column private String webkitRelativePath;
-//    @Column private long size;
-
 
     @ManyToOne
     @JoinColumn(name = "user_id")

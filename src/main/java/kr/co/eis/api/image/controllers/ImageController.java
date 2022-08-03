@@ -42,7 +42,6 @@ public class ImageController {
     //@ReqeustPart는 안됨 -> why?
     @PostMapping(value = "/upload")
     public ResponseEntity<?> uploadImages(@RequestPart(value = "file", required = false) MultipartFile file) throws IOException {
-        System.out.println("들어옴");
         if(file == null){
             System.out.println("files is null");
         }else System.out.println("files is not null");

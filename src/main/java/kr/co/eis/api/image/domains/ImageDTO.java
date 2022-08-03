@@ -22,11 +22,7 @@ public class ImageDTO {
     @ApiModelProperty(position = 1) private long imageId;
     @ApiModelProperty(position = 2) String name;
     @ApiModelProperty(position = 3) String type;
-//    @ApiModelProperty(position = 3) Long lastModified;
-//    @ApiModelProperty(position = 4) Long lastModifiedDate;
-//    @ApiModelProperty(position = 5) String type;
-//    @ApiModelProperty(position = 6) String webkitRelativePath;
-//    @ApiModelProperty(position = 7) Long size;
+
 
 
 
