@@ -23,6 +23,7 @@ spring:
       file-size-threshold: 1MB
 
 
+
 security:
   jwt:
     token:

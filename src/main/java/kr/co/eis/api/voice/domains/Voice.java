@@ -32,7 +32,8 @@ public class Voice {
     @Id
     @Column(name = "voice_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY) private long voiceId;
-
+    @Column private String name;
+    @Column private String type;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

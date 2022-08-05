@@ -1,8 +1,11 @@
 package kr.co.eis.api.voice.services;
 
+import kr.co.eis.api.voice.domains.Voice;
 import kr.co.eis.api.voice.repositories.VoiceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * packageName: kr.co.mibot.api.voice.services
@@ -19,4 +22,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class VoiceServiceImpl implements VoiceService{
     private final VoiceRepository repository;
+
+    @Override
+    public List<Voice> saveVoiceList(List<Voice> voiceList) {
+        return repository.saveAll(voiceList);
+    }
 }

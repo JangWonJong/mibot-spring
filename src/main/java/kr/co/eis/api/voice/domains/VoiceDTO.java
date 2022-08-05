@@ -18,5 +18,6 @@ import org.springframework.stereotype.Component;
 @Component @Data
 public class VoiceDTO {
     @ApiModelProperty(position = 1) private long voiceId;
-    @ApiModelProperty(position = 2) private long userId;
+    @ApiModelProperty(position = 2) String name;
+    @ApiModelProperty(position = 3) String type;
 }
